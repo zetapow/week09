@@ -12,7 +12,6 @@ const userList = [
 /* http.createServer(function(req,res)) {} */
 const server = http.createServer((req, res) => {
    console.log("request received");
-   console.dir(req);
    console.log("requested URL: ", req.url);
    if (req.url === "/") {
       res.write("<h1>Response write</h1>");
