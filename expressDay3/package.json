@@ -1,0 +1,18 @@
+{
+   "name": "expressday3",
+   "version": "1.0.0",
+   "description": "",
+   "main": "server.js",
+   "scripts": {
+      "dev": "nodemon index.js",
+      "start": "node index.js"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "type": "commonjs",
+   "dependencies": {
+      "dotenv": "^16.4.7",
+      "express": "^5.1.0"
+   }
+}
