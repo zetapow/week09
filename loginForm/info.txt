@@ -1,0 +1,57 @@
+Server Side rendering
+All websites were static. HTML on server and sent to browser on request. 
+
+- Server generates webpage HTML and sends to client ensuring fully rendered page
+
+Client-side rendering common in modern web apps with Node.js backend. Server serves static assets (JS, images) and API endpoints for data. Handles logic and sends JSON responses. HTML rendering on client side
+
+Build frontend - HTML and JS using fetch()
+
+Backend API (Node + Express)
+
+GET
+append form data to url in name/value pairs
+- length limited to 2048
+- form submissions where user wants to bookmark result
+- should not use to send sensitive data - visible 
+
+POST 
+- append form data inside body of HTTP request - data not shown in url
+- no size limitations. can send large amounts of data
+- Form submissions cannot be bookmarked
+- Common way of sending data
+
+
+EXPRESS MIDDLEWARE
+- functions after server receives request and before response sent to client via endpoint
+- Arranged in chain and called in sequence
+- Express app = multiple middleware function calls
+
+-Middleware has access to 
+1. request object (req)
+2. response object (res) and
+3. next middleware function in app's req-res cycle
+
+Used for additional request processing at any point within request handling
+
+CORS - middleware - cross origin resource sharing
+ - prevents accepting requests from unknown sources
+
+Adding CORS, specify sources to accept requests from
+- npm install cross
+- const cors = require('cors')
+- app.use(cors())
+- cors() with not arguments, telling server to accept request from anywhere
+
+
+Login endpoint
+- Each HTTP post req has body- containing info
+- req.body
+- req.body.email
+- req.body.password
+
+- MORE MIDDLEWARE
+- HTTP requests transferred as strings/ text
+-- at the server they are translated back to fromat that server can understand and use
+-- convert HTTP req from JSON string to JS object.
+--- app.use(express(json()))

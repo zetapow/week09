@@ -45,25 +45,16 @@ app.get("/api/userlist/:name", (req, res) => {
       (user) => user.name.toLowerCase() === requestedName.toLocaleLowerCase()
    );
    res.json(user);
-
-   // find element with requested name
-   // const user = userList.filter((user) => user.name === requestedName);
-   // respond to broswer
-   // if (user.length) {
-   //    res.status(200).json({ status: "OK", data: user });
-   // } else {
-   //    res.status(404).json({ status: "Error", message: "User not found" });
-   // }
 });
 
+// Refactor example
 app.get("/api/profile", function (req, res) {
    console.log(req.query); // {name: 'Name', age: }
    console.log(req.query.age);
-
-   const searchedAge = req.query.age;
-   const searchedName = req.query.name;
-
-   if (!searchedName && !searchedAge) {
+   // destructure req.query
+   const { searchName, searchAge } = req.query;
+   
+   if (!searchName && !searchAge) {
       return res
          .status(404)
          .json({ status: "Error", message: "User not found" });
@@ -71,9 +62,9 @@ app.get("/api/profile", function (req, res) {
 
    const profile = userList.filter(
       (user) =>
-         (!searchedName ||
-            user.name.toLowerCase() === searchedName.toLowerCase()) &&
-         (!searchedAge || parseInt(searchedAge) === user.age)
+         (!searchName ||
+            user.name.toLowerCase() === searchName.toLowerCase()) &&
+         (!searchAge || parseInt(searchAge) === user.age)
    );
 
    console.log(profile);
@@ -99,3 +90,31 @@ app.listen(process.env.PORT, function () {
       console.log("🤯", error);
    }
 });
+
+// app.get("/api/profile", function (req, res) {
+//    console.log(req.query); // {name: 'Name', age: }
+//    console.log(req.query.age);
+
+//    const searchedAge = req.query.age;
+//    const searchedName = req.query.name;
+
+//    if (!searchedName && !searchedAge) {
+//       return res
+//          .status(404)
+//          .json({ status: "Error", message: "User not found" });
+//    }
+
+//    const profile = userList.filter(
+//       (user) =>
+//          (!searchedName ||
+//             user.name.toLowerCase() === searchedName.toLowerCase()) &&
+//          (!searchedAge || parseInt(searchedAge) === user.age)
+//    );
+
+//    console.log(profile);
+//    if (profile.length > 0) {
+//       res.status(200).json({ status: "OK", data: profile });
+//    } else {
+//       res.status(404).json({ status: "Error", message: "User not found" });
+//    }
+// });
