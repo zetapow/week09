@@ -4,12 +4,18 @@ require("dotenv").config();
 
 const app = express();
 app.use(cors());
+// app.use(cors('http://www.frontend.com'));
 app.use(express.json());
 
 const users = [
    { email: "bob@hello.com", password: "bob123" },
    { email: "anna@hello.com", password: "anna123" },
 ];
+
+app.get("/", (req, res) => {
+   console.log("The / endpoint was hit 🎯");
+   res.send("endpoint hit");
+});
 
 app.post("/login-with-fetch", (req, res) => {
    console.log("/login-with-fetch endpoint hit");
@@ -21,8 +27,9 @@ app.post("/login-with-fetch", (req, res) => {
       if (
          users[i].email === req.body.email &&
          users[i].password === req.body.password
-      )
+      ) {
          return res.sendStatus(200);
+      }
    }
    res.sendStatus(401);
 });
