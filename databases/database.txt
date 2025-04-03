@@ -1,0 +1,63 @@
+Database
+- data = facts or details 
+- organized collection of structured data, stored in computer system
+- organized so that its easily accessed, managed and updated
+
+DBMS
+- Database management system - software system designed to manage databases easily. 
+Systematic approach to managing databes via interface for users
+- creation, retrieval, update and deleting of data (CRUD)
+
+May provide utilities for administration including import, export, monitoring, defrag and analysis
+
+
+Database = collections of related data 
+DBMS = helps manage database
+
+
+TYPES OF DATABASE
+- relational database
+--- data as rows and columns in series of tables
+--- use SQL for writing and querying data 
+--- tables and relations important
+
+- Hierarchical database
+--- modelled in a tree-like structure with pointers. Each record has one parent record and many children
+
+- Network Database
+--- Network model allows each record to have multiple parent - child records
+
+- Object-Oriented database
+--- info represented in form of objects, with fields, properties and methods
+
+
+- cloud DB
+--- run on cloud computing platform and access to db provided as-a-service
+--- Amazon relational database service, MongoDB, Microsoft Azure SQL, Oracle DB Cloud, Google Cloud SQL
+
+- NoSQL database (Not only SQL or Not SQL)
+--- store data in non-tabular way
+--- higher level of flex with newer data models
+--- document databases, key-value databases, wide-column store, graph 
+
+
+======= RELATION DB =================
+- data in tables that can be linked or related based on data common to each.
+- Tables - a table is an arrangement of data in rows and columns
+- Rows - records/ tuples
+- Columns - fields / attribute
+
+Column (attribute/ field) - labelled element of a rows
+Row (record/ tuple) - connected set of one or more fields that describe a place, person or thing
+tuple - ordered, immutable sequence of elements (list that cannot be changed after creation)
+table (relation) - set of rows sharing the same attributes; set of columns and rows
+Result set - refined set of rows; data report from RDBMS in response to query
+
+
+MySQL
+- opensource relational database management system
+- popular sql db used for web dev
+- large community
+
+Database Client
+- RDBMS software to access RDBMS server referred to as client

@@ -1,0 +1,8 @@
+promise based HTTP for browser and node.js
+- help call API
+- same as fetch but easier to use
+
+- Do not need to
+--- stringify JSON before sending
+--- parse JSON after receiving
+--- manually define request headers
